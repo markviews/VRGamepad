@@ -2,8 +2,8 @@
 This program creates a virtual xbox360 controller from buttons pressed with VR controllers, it even runs alongside a VR game allowing you to play games that support xbox360 controller input from in VR with a few programs!
 
 ## How to setup to play local controller games with friends in VR:
-1. Download and install OVRDrop ($15)
-2. Download, install, sign up for Parsec (install controller driver when prompted)
+1. Download and install [OVRDrop](https://store.steampowered.com/app/586210/OVRdrop/) ($15)
+2. Download, install, sign up for [Parsec](https://parsecgaming.com/downloads) (install controller driver when prompted)
 3. Download and extract my app
 4. Launch Parsec and connect to partner
 5. Launch SteamVR with any game
