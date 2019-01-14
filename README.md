@@ -8,7 +8,7 @@ This program creates a virtual xbox360 controller from buttons pressed with VR c
 4. Launch Parsec and connect to partner
 5. Launch SteamVR with any game
 6. Launch OVRDrop, select Parsec Window
-7. Launch my app, define right controller by holding grip and trackpad, than squeese the grip on the left controller to identify it
+7. Launch my app, define right controller by holding grip and trackpad
 
 ## Vive Controls
 - Right trackpad up: x
@@ -28,7 +28,6 @@ This program creates a virtual xbox360 controller from buttons pressed with VR c
 
 
 ### Planned Features
-- Make it so you don't have to initally press buttons on controllers to identify them
 - Oculous Support / Configurable buttons
 - Video Demo
 - Fix all bugs
