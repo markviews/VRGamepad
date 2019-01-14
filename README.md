@@ -24,8 +24,11 @@ This program creates a virtual xbox360 controller from buttons pressed with VR c
 ### Bugs
 - Buttons are mapped for Vive, Probly won't work for any other VR controllers at the moment
 - Trackpad dosn't send data to virtual controller if the controller was out of range oh the lighthouses when you start my program.
+- Annoying SteamVR popup if you press the menu buttons too much
 
 
 ### Planned Features
+- Make it so you don't have to initally press buttons on controllers to identify them
 - Oculous Support / Configurable buttons
 - Video Demo
+- Fix all bugs
