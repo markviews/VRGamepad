@@ -1,6 +1,5 @@
 # VRGamepad
-This program creates a virtual xbox360 controller from buttons pressed with VR controllers, it even runs alongside a VR game allowing you to play games that support zbox360 controller input from in VR with OVRDrop.
-(bad wording... fix this)
+This program creates a virtual xbox360 controller from buttons pressed with VR controllers, it even runs alongside a VR game allowing you to play games that support xbox360 controller input from in VR with a few programs!
 
 ## How to setup to play local controller games with friends in VR:
 1. Download and install OVRDrop ($15)
