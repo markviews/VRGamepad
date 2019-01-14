@@ -22,7 +22,7 @@ This program creates a virtual xbox360 controller from buttons pressed with VR c
 - Left Trackpad: Left Joystick
 
 ### Bugs
-Buttons mapped for Vive, the outputs I'm getting don't match any documentation so... i'm working on updating that
-Trackpad dosn't send data to virtual controller if the controller was out of range oh the lighthouses when you start my program.
+- Buttons mapped for Vive, the outputs I'm getting don't match any documentation so... i'm working on updating that
+- Trackpad dosn't send data to virtual controller if the controller was out of range oh the lighthouses when you start my program.
 
 If you have any trouble with my program please let me know.
