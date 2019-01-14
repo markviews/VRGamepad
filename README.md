@@ -11,15 +11,15 @@ This program creates a virtual xbox360 controller from buttons pressed with VR c
 7. Launch my app, define right controller by holding grip and trackpad
 
 ## Vive Controls
-Right trackpad up: x
-Right trackpad down: b
-Right trackpad up: y
-Right trackpad up: a
-Right trigger: Right bumper
-Right Top Menu: Start
-Left Trigger: left bumper
-Left Top Menu: Back
-Left Trackpad: Left Joystick
+- Right trackpad up: x
+- Right trackpad down: b
+- Right trackpad up: y
+- Right trackpad up: a
+- Right trigger: Right bumper
+- Right Top Menu: Start
+- Left Trigger: left bumper
+- Left Top Menu: Back
+- Left Trackpad: Left Joystick
 
 ### Bugs
 Buttons mapped for Vive, the outputs I'm getting don't match any documentation so... i'm working on updating that
