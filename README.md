@@ -1,7 +1,7 @@
 # VRGamepad
 This program creates a virtual xbox360 controller from buttons pressed with VR controllers, and is able to run while any other VR application is open.
 
-##How do I run it?
+## How do I run it?
 1. Downlad and unzip
 2. Configure config.txt if you want
 3. Run VRGamepad.exe
