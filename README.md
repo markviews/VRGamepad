@@ -10,24 +10,13 @@ This program creates a virtual xbox360 controller from buttons pressed with VR c
 6. Launch OVRDrop, select Parsec Window
 7. Launch my app, define right controller by holding grip and trackpad
 
-## Vive Controls
-- Right trackpad up: x
-- Right trackpad down: b
-- Right trackpad up: y
-- Right trackpad up: a
-- Right trigger: Right bumper
-- Right Top Menu: Start
-- Left Trigger: left bumper
-- Left Top Menu: Back
-- Left Trackpad: Left Joystick
-
 ### Bugs
-- Buttons are mapped for Vive, Probly won't work for any other VR controllers at the moment
+- Buttons are setup for Vive, Probly won't work for any other VR controllers at the moment
 - Trackpad dosn't send data to virtual controller if the controller was out of range of the lighthouses when this program was opened.
-- Annoying SteamVR popup if you press the menu buttons too much
+- xbox "back" button opens annoying SteamVR popup (I don't recomend mapping it for now)
 
 
 ### Planned Features
-- Oculous Support / Configurable buttons
+- Oculous Support
 - Video Demo
 - Fix all bugs
