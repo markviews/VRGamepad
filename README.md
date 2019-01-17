@@ -5,7 +5,7 @@ This program creates a virtual xbox360 controller from buttons pressed with Vive
 1. [Downlad](https://github.com/markviews/VRGamepad/files/2762776/VRGamepad.1.0.zip) and unzip
 2. Configure config.txt if you want
 3. Run VRGamepad.exe
-4. Press buttons to define right controller (default is trigger and trackpad press)
+4. Hold buttons to define right controller (default is trigger and trackpad press)
 
 ## How to setup to play local controller games with friends in VR:
 1. Download and install [OVRDrop](https://store.steampowered.com/app/586210/OVRdrop/) ($15)
