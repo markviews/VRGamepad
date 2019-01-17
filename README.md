@@ -23,7 +23,8 @@ This program creates a virtual xbox360 controller from buttons pressed with VR c
 4. add openvr-master\headers and ViGEm to Configuration Properties > Include Directories
 5. add openvr-master to C/C++ > General > Additional Include Directories
 6. add openvr-master\lib\win32 to Linker > Gneral > Additional Library Directories
-7. search for msvcprtd.lib in your Visual Studio folder, add its x86 directory to Linker > General > Additional Library Directories Example directory: C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\onecore\x86
+7. search for msvcprtd.lib in your Visual Studio folder, add its x86 directory to Linker > General > Additional Library Directories 
+Example directory: C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\lib\onecore\x86
 8. Build
 
 ### Planned Features
