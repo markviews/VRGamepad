@@ -1,5 +1,5 @@
 # VRGamepad
-This program creates a virtual xbox360 controller from buttons pressed with VR controllers, and is able to run while any other VR application is open.
+This program creates a virtual xbox360 controller from buttons pressed with Vive controllers, and is able to run while any other VR application is open.
 
 ## How to use:
 1. [Downlad](https://github.com/markviews/VRGamepad/files/2762776/VRGamepad.1.0.zip) and unzip
@@ -15,6 +15,19 @@ This program creates a virtual xbox360 controller from buttons pressed with VR c
 5. Launch SteamVR with any game
 6. Launch OVRDrop, select Parsec Window
 7. Launch my app, define right controller by holding grip and trackpad
+
+## Config
+right_menu, right_grip, right_trackpad, right_trigger, left_menu, left_grip, left_trackpad, left_trigger, right_touch_up, right_touch_down, right_touch_right, right_touch_left, left_touch_up, left_touch_down, left_tocuh_right, left_touch_lef can be set to:
+a, b, x, y, back, start, dpad_down, dpad_left, dpad_right, dpad_up, left_shoulder, left_thumb, right_shoulder, right_thumb
+
+right_touch, left_touch can be set to:
+thumb_left or thumb_right
+
+def_right_1, def_right_2 can be set to:
+menu, grip, tackpad, trigger
+
+sound, debug can be set to:
+true, false
 
 ## Build instructions:
 1. Download and extract source code
@@ -32,6 +45,5 @@ This program creates a virtual xbox360 controller from buttons pressed with VR c
 - Fix all bugs
 
 ### Bugs
-- Buttons are setup for Vive, Probly won't work for any other VR controllers at the moment
 - Trackpad dosn't send data to virtual controller if the controller was out of range of the lighthouses when this program was opened.
 - xbox "back" button opens annoying SteamVR popup (I don't recomend mapping it for now)
