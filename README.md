@@ -2,7 +2,7 @@
 This program creates a virtual xbox360 controller from buttons pressed with Vive controllers, and is able to run while any other VR application is open.
 
 ## How to use:
-1. [Downlad](https://github.com/markviews/VRGamepad/files/2762776/VRGamepad.1.0.zip) and unzip
+1. [Downlad](https://github.com/markviews/VRGamepad/releases) and unzip
 2. Configure config.txt if you want
 3. Run VRGamepad.exe
 4. Hold buttons to define right controller (default is trigger and trackpad press)
