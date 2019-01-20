@@ -26,8 +26,10 @@ thumb_left or thumb_right
 def_right_1, def_right_2 can be set to:
 menu, grip, tackpad, trigger
 
-sound, debug can be set to:
+sound can be set to:
 true, false
+
+debug can be set to false, show(print button ids), buttons(disable virtual controller and print button ids)
 
 ## Build instructions:
 1. Download and extract source code
@@ -45,5 +47,4 @@ true, false
 - Fix all bugs
 
 ### Bugs
-- Trackpad dosn't send data to virtual controller if the controller was out of range of the lighthouses when this program was opened.
 - xbox "back" button opens annoying SteamVR popup (I don't recomend mapping it for now)
