@@ -38,9 +38,6 @@ bool LighthouseTracking::RunProcedure(bool bWaitForEvents) {
 	return true;
 }
 
-int id1 = -2;
-int id2 = -2;
-
 bool LighthouseTracking::ProcessVREvent(const vr::VREvent_t & event) {
 	if (event.eventType == 200 || event.eventType == 201 || event.eventType == 203) {
 		press(event.trackedDeviceIndex, event.data.controller.button, event.eventType);
@@ -49,17 +46,26 @@ bool LighthouseTracking::ProcessVREvent(const vr::VREvent_t & event) {
 }
 
 void LighthouseTracking::ParseTrackingFrame() {
-	if (id1 != -2) {
-		vr::TrackedDevicePose_t trackedDevicePose;
-		vr::VRControllerState_t controllerState;
-		vr::VRSystem()->GetControllerStateWithPose(vr::TrackingUniverseStanding, id1, &controllerState, sizeof(controllerState), &trackedDevicePose);
-		touch(id1, controllerState.rAxis[0].x, controllerState.rAxis[0].y);
-	}
-	if (id2 != -2) {
-		vr::TrackedDevicePose_t trackedDevicePose;
-		vr::VRControllerState_t controllerState;
-		vr::VRSystem()->GetControllerStateWithPose(vr::TrackingUniverseStanding, id2, &controllerState, sizeof(controllerState), &trackedDevicePose);
-		touch(id2, controllerState.rAxis[0].x, controllerState.rAxis[0].y);
+	for (vr::TrackedDeviceIndex_t unDevice = 0; unDevice < vr::k_unMaxTrackedDeviceCount; unDevice++) {
+
+		vr::ETrackedDeviceClass trackedDeviceClass = vr::VRSystem()->GetTrackedDeviceClass(unDevice);
+		switch (trackedDeviceClass) {
+		case vr::ETrackedDeviceClass::TrackedDeviceClass_Controller:
+			char manufacturer[1024];
+			vr::VRSystem()->GetStringTrackedDeviceProperty(unDevice, vr::ETrackedDeviceProperty::Prop_ManufacturerName_String, manufacturer, sizeof(manufacturer));
+
+			char modelnumber[1024];
+			vr::VRSystem()->GetStringTrackedDeviceProperty(unDevice, vr::ETrackedDeviceProperty::Prop_ModelNumber_String, modelnumber, sizeof(modelnumber));
+
+			if (!strstr(modelnumber, "XInput Controller")) {//Ignore the virtual controller we created
+				vr::TrackedDevicePose_t trackedDevicePose;
+				vr::VRControllerState_t controllerState;
+				vr::VRSystem()->GetControllerStateWithPose(vr::TrackingUniverseStanding, unDevice, &controllerState, sizeof(controllerState), &trackedDevicePose);
+				touch(unDevice, controllerState.rAxis[0].x, controllerState.rAxis[0].y);
+				//printf("Controller found: |%s| |%s| ID: %d\n", manufacturer, modelnumber, unDevice);
+			}
+
+		}
 	}
 }
 
@@ -80,13 +86,7 @@ void findControllers() {
 
 			if (!strstr(modelnumber, "XInput Controller")) {//Ignore the virtual controller we created
 				printf("Controller found: |%s| |%s| ID: %d\n", manufacturer, modelnumber, unDevice);
-				if (id1 == -2) id1 = unDevice;
-				else id2 = unDevice;
 			}
-
 		}
-	}
-	if (id2 == -2) {
-		printf("Failed to find two controllers...");
 	}
 }

@@ -41,16 +41,20 @@ XUSB_REPORT report;
 auto driver = vigem_alloc();
 auto x360 = vigem_target_x360_alloc();
 
-bool debug;
-bool sound;
-string type = "";
+string debug;
+bool sound = false;
+string type;
 
 void findControllers();
+
+/*
+Button input now sent, even in controller had bad tacking when program started
+*/
 
 void setType(string t) {
 	if (type == "") {
 		type = t;
-		printf("Headset type: %s\n", t);
+		cout << "Headset type: " << t << "\n";
 	}
 }
 
@@ -107,8 +111,8 @@ void loadConfig() {
 		else if (thing == "left_touch") left_touch = line;
 		else if (thing == "def_right_1") def_right_1 = getID(line);
 		else if (thing == "def_right_2") def_right_2 = getID(line);
-		else if (thing == "sound") { if (line == "true") sound = true; else sound = false; }
-		else if (thing == "debug") { if (line == "true") debug = true; else debug = false; }
+		else if (thing == "sound") { if (line == "true") sound = true; }
+		else if (thing == "debug") debug = line;
 	}
 	printf("Config loaded\n");
 }
@@ -141,10 +145,13 @@ void playSound(string type) {
 
 int _tmain(int argc, _TCHAR* argv[]) {
 	loadConfig();
-	initialize_xbox();
+	if (debug == "show" || debug == "buttons") printf("Debug mode enabled, displaying all controller input\n");
+	if (debug != "buttons") {
+		initialize_xbox();
+	} else printf("Debug mode set to 'buttons' for getting button ids, not creating virtual controller\n");
 	LighthouseTracking *lighthouseTracking = new LighthouseTracking();
 	if (lighthouseTracking) {
-		printf("Light house tracking\n");
+		printf("Light house tracking initialised\n");
 		findControllers();
 		Sleep(2000);
 		while (lighthouseTracking->RunProcedure(true)) {
@@ -181,7 +188,7 @@ void setRight(int controllerID) {
 }
 
 void press(int controllerID, int buttonID, int eventID) {
-	if (debug)
+	if (debug == "show" || debug == "buttons")
 		printf("ControllerID: %d ButtonID: %d EventID: %d\n", controllerID, buttonID, eventID);
 
 	if (buttonID == def_right_1) {//Squeese
@@ -190,8 +197,7 @@ void press(int controllerID, int buttonID, int eventID) {
 			if (seccond == controllerID) {
 				setRight(controllerID);
 			}
-		}
-		else first = -2;
+		} else first = -2;
 	}
 
 	if (buttonID == def_right_2) {//Trackpad press
@@ -248,7 +254,7 @@ void press(int controllerID, int buttonID, int eventID) {
 }
 
 void touch(int controllerID, float x, float y) {
-	if (debug && (x != 0 || y != 0))
+	if ((debug == "show" || debug == "buttons") && (x != 0 || y != 0))
 		printf("ControllerID %d touched at: %.2f, %.2f\n", controllerID, x, y);
 
 	if (enabled)
