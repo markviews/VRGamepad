@@ -38,8 +38,7 @@ debug can be set to false, show(print button ids), buttons(disable virtual contr
 4. add openvr-master\headers and ViGEm to Configuration Properties > Include Directories
 5. add openvr-master to C/C++ > General > Additional Include Directories
 6. add openvr-master\lib\win32 to Linker > General > Additional Library Directories
-7. search for msvcprtd.lib in your Visual Studio folder, add its x86 directory to Linker > General > Additional Library Directories 
-8. Build
+7. Build
 
 ### Planned Features
 - Oculous Support
