@@ -35,7 +35,7 @@ debug can be set to false, show(print button ids), buttons(disable virtual contr
 1. Download and extract source code
 2. Download and extract [OpenVR SDK](https://github.com/ValveSoftware/openvr) and [ViGEm](https://github.com/nefarius/ViGEm).
 3. Open VRGamepad.sln with Visual Code Studio 2017
-4. add openvr-master\headers and ViGEm to Configuration Properties > Include Directories
+4. add openvr-master\headers and ViGEm to Configuration Properties > VC++ Directories > Include Directories
 5. add openvr-master to C/C++ > General > Additional Include Directories
 6. add openvr-master\lib\win32 to Linker > General > Additional Library Directories
 7. Build
