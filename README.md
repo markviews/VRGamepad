@@ -1,3 +1,8 @@
+#This project is Depreciated and no longer receving updates.
+
+
+
+
 # VRGamepad
 This program creates a virtual xbox360 controller from buttons pressed with Vive controllers, and is able to run while any other VR application is open.
 
